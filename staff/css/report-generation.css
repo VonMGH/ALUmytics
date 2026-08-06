@@ -1,0 +1,168 @@
+/* Report Generation page — supplements index.css (dashboard-page theme) */
+
+.dashboard-page .header-top {
+    align-items: flex-start;
+}
+
+.dashboard-page .report-export-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.dashboard-page .rg-filter-card,
+.dashboard-page .rg-table-card {
+    margin-bottom: 1rem;
+}
+
+.dashboard-page .rg-filter-card > .card-body,
+.dashboard-page .rg-table-card > .card-body {
+    padding: 1.25rem 1.5rem;
+}
+
+.dashboard-page .filter-main-row {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+}
+
+.dashboard-page .filter-main-row .category-col {
+    border-right: 1px solid var(--border-color);
+}
+
+@media (max-width: 767.98px) {
+    .dashboard-page .filter-main-row .category-col {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.dashboard-page .filter-main-row .subfilters-col {
+    padding-left: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    .dashboard-page .filter-main-row .subfilters-col {
+        padding-left: 0;
+    }
+}
+
+.dashboard-page .rg-category-label,
+.dashboard-page .rg-filter-card .form-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--light-text);
+}
+
+.dashboard-page .rg-subfilters-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--light-text);
+    white-space: nowrap;
+}
+
+.dashboard-page .rg-filter-field {
+    min-width: 140px;
+    flex: 1 1 auto;
+}
+
+.dashboard-page .rg-filter-field--180 { min-width: 180px; }
+.dashboard-page .rg-filter-field--170 { min-width: 170px; }
+.dashboard-page .rg-filter-field--160 { min-width: 160px; }
+.dashboard-page .rg-filter-field--150 { min-width: 150px; }
+.dashboard-page .rg-filter-field--200 { min-width: 200px; }
+.dashboard-page .rg-filter-field--220 { min-width: 220px; }
+.dashboard-page .rg-filter-field--120 { min-width: 120px; }
+
+.dashboard-page .rg-filter-card .form-select,
+.dashboard-page .rg-filter-card .form-control,
+.dashboard-page .rg-table-card .form-select,
+.dashboard-page .rg-table-card .form-control {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-page .rg-filter-card .form-select:focus,
+.dashboard-page .rg-filter-card .form-control:focus,
+.dashboard-page .rg-table-card .form-select:focus,
+.dashboard-page .rg-table-card .form-control:focus {
+    border-color: var(--dash-brand);
+    box-shadow: 0 0 0 3px var(--dash-brand-soft);
+}
+
+.dashboard-page .rg-table {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.dashboard-page .rg-table thead th {
+    background: #111111;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: none;
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+}
+
+.dashboard-page .rg-table tbody td {
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+}
+
+.dashboard-page .rg-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.dashboard-page .rg-table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+.dashboard-page .rg-table-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 0.5rem;
+}
+
+.dashboard-page .pagination .page-link {
+    color: var(--dash-brand);
+    border-color: var(--border-color);
+}
+
+.dashboard-page .pagination .page-item.active .page-link {
+    background-color: var(--dash-brand);
+    border-color: var(--dash-brand);
+}
+
+.dashboard-page .pagination .page-link:hover {
+    background-color: var(--dash-brand-soft);
+    color: var(--dash-brand);
+}
+
+.dashboard-page .modal-header {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.dashboard-page .modal .card-header.bg-primary,
+.dashboard-page .rg-detail-header {
+    background-color: #111111 !important;
+    color: #fff !important;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .dashboard-page .report-export-actions {
+        width: 100%;
+    }
+}

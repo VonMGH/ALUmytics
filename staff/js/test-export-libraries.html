@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Export Libraries Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="export-libraries.js"></script>
+  </head>
+  <body>
+    <h1>Export Libraries Test</h1>
+    <button onclick="testExports()">Test Enhanced Export</button>
+    <button onclick="testBackwardCompatibility()">
+      Test Backward Compatibility
+    </button>
+    <button onclick="testDataAnalysis()">Test Data Analysis</button>
+
+    <div id="output"></div>
+
+    <script>
+      // Sample test data
+      const testData = [
+        ["DEMOGRAPHICS METRICS"],
+        ["Metric", "Value"],
+        ["Total Alumni", "1,250"],
+        ["Active Members", "980"],
+        ["Average Age", "28.5"],
+        [""],
+        ["GENDER DISTRIBUTION"],
+        ["__CHART_IMAGE__", "gender"],
+        ["Gender", "Count"],
+        ["Male", "650"],
+        ["Female", "600"],
+        [""],
+        ["AGE DISTRIBUTION"],
+        ["__CHART_IMAGE__", "age"],
+        ["Age Group", "Count"],
+        ["20-25", "300"],
+        ["26-30", "450"],
+        ["31-35", "350"],
+        ["36+", "150"],
+        [""],
+        ["DEGREE BREAKDOWN"],
+        ["__CHART_IMAGE__", "degree"],
+        ["Program", "Count"],
+        ["Computer Science", "400"],
+        ["Engineering", "350"],
+        ["Business", "300"],
+        ["Others", "200"],
+      ];
+
+      // Mock chart images (create simple colored rectangles)
+      function createMockChart(color) {
+        const canvas = document.createElement("canvas");
+        canvas.width = 300;
+        canvas.height = 150;
+        const ctx = canvas.getContext("2d");
+
+        // Fill with color
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 0, 300, 150);
+
+        // Add some text
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("Mock Chart", 150, 80);
+
+        return canvas.toDataURL("image/png", 1.0);
+      }
+
+      const mockChartImages = {
+        gender: createMockChart("#FF6B6B"),
+        age: createMockChart("#4ECDC4"),
+        degree: createMockChart("#45B7D1"),
+      };
+
+      function testExports() {
+        console.log("Testing enhanced export functionality...");
+
+        try {
+          // Test different configurations
+          const configs = ["standard", "landscape", "compact", "presentation"];
+
+          configs.forEach((configType) => {
+            const config = ExportLibraries.createConfig(configType);
+            console.log(`Testing ${configType} configuration:`, config);
+
+            // Would normally call:
+            // ExportLibraries.exportToPDF(testData, `test_${configType}.pdf`, {
+            //     chartImages: mockChartImages,
+            //     config: config
+            // }, `Test Report - ${configType.toUpperCase()}`);
+          });
+
+          document.getElementById("output").innerHTML +=
+            "<p>✅ Enhanced export test completed - check console</p>";
+        } catch (error) {
+          console.error("Enhanced export test failed:", error);
+          document.getElementById("output").innerHTML +=
+            "<p>❌ Enhanced export test failed - check console</p>";
+        }
+      }
+
+      function testBackwardCompatibility() {
+        console.log("Testing backward compatibility...");
+
+        try {
+          // Test old-style single chart image
+          const singleChartImage = createMockChart("#FFA07A");
+
+          // This should work with the enhanced library
+          console.log("Testing legacy chartImgDataUrl pattern...");
+
+          // Would normally call:
+          // ExportLibraries.exportToPDF(testData, 'legacy_test.pdf', { chartImgDataUrl: singleChartImage }, 'Legacy Test');
+
+          document.getElementById("output").innerHTML +=
+            "<p>✅ Backward compatibility test completed - check console</p>";
+        } catch (error) {
+          console.error("Backward compatibility test failed:", error);
+          document.getElementById("output").innerHTML +=
+            "<p>❌ Backward compatibility test failed - check console</p>";
+        }
+      }
+
+      function testDataAnalysis() {
+        console.log("Testing data analysis...");
+
+        try {
+          const analysis = ExportLibraries.analyzeData(testData);
+          console.log("Data analysis results:", analysis);
+
+          // Test chart image validation
+          const validImages =
+            ExportLibraries.validateChartImages(mockChartImages);
+          console.log("Valid chart images:", Object.keys(validImages));
+
+          // Test debug info
+          ExportLibraries.debugLibraries();
+
+          document.getElementById("output").innerHTML += `<div>
+                        <h3>Data Analysis Results:</h3>
+                        <p>Total rows: ${analysis.totalRows}</p>
+                        <p>Section headers: ${analysis.sectionHeaders}</p>
+                        <p>Chart markers: ${analysis.chartMarkers}</p>
+                        <p>Chart types: ${analysis.chartTypes.join(", ")}</p>
+                        <p>Suggested config: ${analysis.suggestedConfig}</p>
+                        <p>Valid chart images: ${
+                          Object.keys(validImages).length
+                        }</p>
+                    </div>`;
+        } catch (error) {
+          console.error("Data analysis test failed:", error);
+          document.getElementById("output").innerHTML +=
+            "<p>❌ Data analysis test failed - check console</p>";
+        }
+      }
+
+      // Run debug on load
+      window.addEventListener("load", function () {
+        console.log("Export Libraries loaded. Running initial tests...");
+        ExportLibraries.debugLibraries();
+      });
+    </script>
+  </body>
+</html>

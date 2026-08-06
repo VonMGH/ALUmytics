@@ -1,0 +1,605 @@
+/* General Font Style */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  display: block;
+}
+
+
+.certification-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 30px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  justify-items: stretch !important;
+}
+
+/* Center a single card when it's the only submission */
+.certification-list > .certification-entry:only-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 640px);
+}
+
+/* Max 2 columns; collapse to 1 on smaller screens */
+@media (max-width: 900px) {
+  .certification-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .profile-image-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.awards-page-content {
+  color: #333;
+}
+
+.profile-heading {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #2e7d32; /* Primary Green */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Awards List */
+.awards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.award-entry {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.award-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Award Header */
+.award-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.award-entry h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+.award-category-badge {
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(46, 125, 50, 0.3);
+}
+
+/* Award Details */
+.award-details {
+  margin-bottom: 20px;
+}
+
+.award-details p {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.award-details p strong {
+  color: #333;
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+/* Award Image Container */
+.award-image-container {
+  position: relative;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+
+.award-image-container:hover {
+  transform: scale(1.02);
+}
+
+.award-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.award-image-container:hover .award-image {
+  filter: brightness(0.8);
+}
+
+.award-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.award-image-container:hover .award-image-overlay {
+  opacity: 1;
+}
+
+.view-btn, .download-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.view-btn:hover, .download-btn:hover {
+  background: #1b5e20;
+}
+
+/* PDF Container */
+.award-pdf-container {
+  background: #f8f9fa;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pdf-icon {
+  font-size: 48px;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.pdf-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pdf-link {
+  background: #2e7d32;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.pdf-link:hover {
+  background: #1b5e20;
+  color: white;
+  text-decoration: none;
+}
+
+/* Award Actions */
+.award-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+/* Add Award Button */
+.add-employment {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  transition: all 0.3s ease;
+}
+
+.add-employment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.empty-icon {
+  font-size: 4em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.empty-state h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.empty-state p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+/* Image Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 16px;
+  /* Centering is applied when opened via JS by setting display:flex */
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-content {
+  background-color: #fff;
+  margin: 0;
+  padding: 20px;
+  border-radius: 12px;
+  width: min(68vw, 640px);
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.image-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.image-close-btn:hover {
+  color: #333;
+}
+
+.image-modal-content h3 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+  font-size: 1.5em;
+}
+
+.image-modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 58vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure awards modal image is constrained even if other styles override */
+#modalImage {
+  max-width: 100% !important;
+  max-height: 58vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.image-modal-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.download-modal-btn {
+  background: #2e7d32;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.download-modal-btn:hover {
+  background: #1b5e20;
+  color: white;
+  text-decoration: none;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #333;
+}
+
+.modal h2 {
+  margin-bottom: 25px;
+  color: #2e7d32;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.save-button {
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .awards-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .award-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .award-entry h3 {
+    font-size: 18px;
+  }
+  
+  .award-category-badge {
+    font-size: 11px;
+  }
+  
+  .profile-heading {
+    font-size: 2em;
+  }
+  
+  .add-employment {
+    width: 100%;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  
+  .image-modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .award-actions {
+    flex-direction: column;
+  }
+  
+  .edit-btn, .delete-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .awards-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .award-entry {
+    padding: 18px;
+  }
+  .award-entry h3 {
+    font-size: 18px;
+  }
+  .award-details p strong {
+    min-width: auto;
+  }
+  .award-actions .edit-btn,
+  .award-actions .delete-btn {
+    width: 100% !important;
+    display: block;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: stretch;
+  }
+}

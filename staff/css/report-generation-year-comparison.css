@@ -1,0 +1,14 @@
+/* Year Comparison page — supplements index.css + report-generation.css + report-generation-tracer.css */
+
+.dashboard-page .yc-chart-body {
+    min-height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-page .yc-chart-body canvas {
+    max-width: 520px;
+    width: 100%;
+    height: 320px;
+}

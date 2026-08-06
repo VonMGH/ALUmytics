@@ -1,0 +1,83 @@
+/* Tracer Study page — supplements index.css + report-generation.css */
+
+.dashboard-page .rt-filter-card,
+.dashboard-page .rt-options-card,
+.dashboard-page .rt-summary-card,
+.dashboard-page .rt-chart-card {
+    margin-bottom: 1rem;
+}
+
+.dashboard-page .rt-filter-card > .card-body,
+.dashboard-page .rt-options-card > .card-body,
+.dashboard-page .rt-summary-card > .card-body,
+.dashboard-page .rt-chart-card > .card-body {
+    padding: 1.25rem 1.5rem;
+}
+
+.dashboard-page .rt-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--light-text);
+    margin-bottom: 0.65rem;
+}
+
+.dashboard-page .rt-filter-actions {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.dashboard-page .rt-export-actions .btn {
+    /* Preserve Bootstrap outline button colors */
+}
+
+.dashboard-page .rt-dropdown-menu {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.dashboard-page .rt-chart-body {
+    min-height: 320px;
+    position: relative;
+}
+
+.dashboard-page .rt-chart-body canvas {
+    max-height: 300px;
+    width: 100% !important;
+}
+
+.dashboard-page .rt-manual-total-cell {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.dashboard-page .rt-manual-total-input {
+    max-width: 70px;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.dashboard-page .rt-summary-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 0.5rem;
+}
+
+.dashboard-page .rt-empty-msg {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .dashboard-page .rt-export-actions {
+        width: 100%;
+    }
+
+    .dashboard-page .rt-export-actions .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}

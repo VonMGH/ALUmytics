@@ -1,0 +1,190 @@
+/* User Logs page — supplements index.css (dashboard-page theme) */
+
+.dashboard-page .metric-change.neutral {
+    color: var(--dash-brand-muted);
+    font-weight: 500;
+}
+
+.dashboard-page .metric-change.positive {
+    color: var(--dash-brand);
+}
+
+.dashboard-page .metric-change.negative {
+    color: var(--danger-color);
+}
+
+.dashboard-page .metric-card .metric-change i {
+    margin-right: 0.35rem;
+    font-size: 0.85rem;
+}
+
+.dashboard-page .metric-change.positive i,
+.dashboard-page .metric-change.neutral i {
+    color: var(--dash-brand-muted);
+}
+
+.dashboard-page .metric-change.negative i {
+    color: var(--danger-color);
+}
+
+.dashboard-page .icon-container {
+    color: #fff;
+}
+
+.dashboard-page .icon-users,
+.dashboard-page .icon-logins,
+.dashboard-page .icon-failed,
+.dashboard-page .icon-today {
+    background: linear-gradient(135deg, var(--dash-brand), var(--dash-brand-light));
+}
+
+.dashboard-page .btn-primary {
+    background-color: var(--dash-brand);
+    border-color: var(--dash-brand);
+}
+
+.dashboard-page .btn-primary:hover,
+.dashboard-page .btn-primary:focus {
+    background-color: var(--dash-brand-hover);
+    border-color: var(--dash-brand-hover);
+}
+
+.dashboard-page .ul-filter-panel {
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-page .ul-filter-controls {
+    align-items: end;
+}
+
+.dashboard-page .ul-filter-controls .filter-dropdown label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--light-text);
+    margin-bottom: 0.4rem;
+}
+
+.dashboard-page .ul-filter-controls .form-control,
+.dashboard-page .ul-filter-controls .form-select {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-page .ul-filter-controls .form-control:focus,
+.dashboard-page .ul-filter-controls .form-select:focus {
+    border-color: var(--dash-brand);
+    box-shadow: 0 0 0 3px var(--dash-brand-soft);
+}
+
+.dashboard-page .ul-filter-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.dashboard-page .ul-table-card > .card-body {
+    padding: 0;
+}
+
+.dashboard-page .ul-table {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.dashboard-page .ul-table thead th {
+    background: #111111;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: none;
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+}
+
+.dashboard-page .ul-table tbody td {
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+}
+
+.dashboard-page .ul-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.dashboard-page .ul-table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+.dashboard-page .ul-table-card .card-body > .table-responsive + nav {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.dashboard-page .avatar-initials {
+    width: 32px;
+    height: 32px;
+    background: var(--dash-brand);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.72rem;
+}
+
+.dashboard-page .user-avatar img,
+.dashboard-page .avatar-initials {
+    transition: transform 0.2s ease;
+}
+
+.dashboard-page .user-avatar:hover img,
+.dashboard-page .user-avatar:hover .avatar-initials {
+    transform: scale(1.08);
+}
+
+.dashboard-page .log-action-icon {
+    color: var(--dash-brand);
+}
+
+.dashboard-page .badge.bg-secondary {
+    background-color: var(--dash-brand-muted) !important;
+}
+
+.dashboard-page .ul-empty-state {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--light-text);
+}
+
+.dashboard-page .ul-empty-state i {
+    color: var(--dash-brand-muted);
+    margin-bottom: 1rem;
+}
+
+.dashboard-page .pagination .page-link {
+    color: var(--dash-brand);
+    border-color: var(--border-color);
+}
+
+.dashboard-page .pagination .page-item.active .page-link {
+    background-color: var(--dash-brand);
+    border-color: var(--dash-brand);
+}
+
+.dashboard-page .pagination .page-link:hover {
+    background-color: var(--dash-brand-soft);
+    color: var(--dash-brand);
+}
+
+@media (max-width: 768px) {
+    .dashboard-page .ul-filter-actions {
+        width: 100%;
+    }
+
+    .dashboard-page .ul-filter-actions .btn {
+        flex: 1;
+    }
+}
